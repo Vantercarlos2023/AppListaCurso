@@ -39,12 +39,6 @@ public class MainActivity extends AppCompatActivity {
         pessoa.setCursoDesejado("Kotlin");
         pessoa.setTelefoneContato("9598400-4566");
 
-        outraPessoa = new Pessoa();
-        outraPessoa.setPrimeiroNome("Carlos");
-        outraPessoa.setSobreNome("Henrique");
-        outraPessoa.setCursoDesejado("Java");
-        outraPessoa.setTelefoneContato("9598104-2304");
-
         editPrimeiroNome = findViewById(R.id.editPrimeiroNome);
         editSobreNome = findViewById(R.id.editSobreNome);
         editNomeCurso = findViewById(R.id.editNomeCurso);
@@ -85,30 +79,9 @@ public class MainActivity extends AppCompatActivity {
                 pessoa.setCursoDesejado(editNomeCurso.getText().toString());
                 pessoa.setTelefoneContato(editTelefoneContato.getText().toString());
 
-                Toast.makeText(MainActivity.this, "Salvo com sucesso!"+pessoa.toString(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Salvo com sucesso!" + pessoa.toString(), Toast.LENGTH_LONG).show();
             }
         });
-
-        /*dadosPessoa = "Primeiro Nome: ";
-        dadosPessoa += pessoa.getPrimeiroNome();
-        dadosPessoa += " Sobrenome: ";
-        dadosPessoa += pessoa.getSobreNome();
-        dadosPessoa += " Curso Desejado: ";
-        dadosPessoa += pessoa.getCursoDesejado();
-        dadosPessoa += " Telefone de Contato: ";
-        dadosPessoa += pessoa.getTelefoneContato();
-
-        dadosOutraPessoa = "Primeiro Nome: ";
-        dadosOutraPessoa += outraPessoa.getPrimeiroNome();
-        dadosOutraPessoa += " Sobrenome: ";
-        dadosOutraPessoa += outraPessoa.getSobreNome();
-        dadosOutraPessoa += " Curso Desejado: ";
-        dadosOutraPessoa += outraPessoa.getCursoDesejado();
-        dadosOutraPessoa += " Telefone de Contato: ";
-        dadosOutraPessoa += outraPessoa.getTelefoneContato();*/
-
-        Log.i("POOAndroid", pessoa.toString());
-        Log.i("POOAndroid", outraPessoa.toString());
 
         int parado = 0;
     }
