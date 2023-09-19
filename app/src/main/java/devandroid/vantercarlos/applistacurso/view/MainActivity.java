@@ -45,26 +45,27 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor listaVip = preferences.edit();
 
         controller = new PessoaController();
+        controller.toString();
 
         pessoa = new Pessoa();
-        pessoa.setPrimeiroNome("Vantercarlos");
-        pessoa.setSobreNome("Caitano");
-        pessoa.setCursoDesejado("Kotlin");
-        pessoa.setTelefoneContato("9598400-4566");
+        pessoa.setPrimeiroNome(preferences.getString("primeiroNome", ""));
+        pessoa.setSobreNome(preferences.getString("sobreNome", ""));
+        pessoa.setCursoDesejado(preferences.getString("cursoDesejado", ""));
+        pessoa.setTelefoneContato(preferences.getString("telefoneContato", ""));
 
         editPrimeiroNome = findViewById(R.id.editPrimeiroNome);
         editSobreNome = findViewById(R.id.editSobreNome);
         editNomeCurso = findViewById(R.id.editNomeCurso);
         editTelefoneContato = findViewById(R.id.editTelefoneContato);
 
-        btnLimpar = findViewById(R.id.btnLimpar);
-        btnSalvar = findViewById(R.id.btnSalvar);
-        btnFinalizar = findViewById(R.id.btnFinalizar);
-
         editPrimeiroNome.setText(pessoa.getPrimeiroNome());
         editSobreNome.setText(pessoa.getSobreNome());
         editNomeCurso.setText(pessoa.getCursoDesejado());
         editTelefoneContato.setText(pessoa.getTelefoneContato());
+
+        btnLimpar = findViewById(R.id.btnLimpar);
+        btnSalvar = findViewById(R.id.btnSalvar);
+        btnFinalizar = findViewById(R.id.btnFinalizar);
 
         btnLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
                 listaVip.putString("primeiroNome", pessoa.getPrimeiroNome());
                 listaVip.putString("sobreNome", pessoa.getSobreNome());
-                listaVip.putString("CursoDesejado", pessoa.getCursoDesejado());
+                listaVip.putString("cursoDesejado", pessoa.getCursoDesejado());
                 listaVip.putString("telefoneContato", pessoa.getTelefoneContato());
                 listaVip.apply();
 
